@@ -1,0 +1,6 @@
+{
+  "name": "ফলিকা",
+  "description": "Comprehensive Bangladeshi agricultural advisory, livestock & poultry healthcare, fisheries aquaculture planner, crop rotation engine, market price intelligence, and financial inclusion platform for farmers.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
