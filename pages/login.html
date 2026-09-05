@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>লগইন — ফলিকা</title>
+  <meta name="description" content="ফলিকা লগইন — মোবাইল নম্বর ও ওটিপি দিয়ে নিরাপদ প্রবেশ">
+  <script>
+    try {
+      var t = localStorage.getItem('folika-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css?v=20260829">
+
+</head>
+<body>
+
+  <a href="#loginMain" class="skip-link" data-i18n="skip_content">মূল বিষয়বস্তুতে যান</a>
+
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <button id="mobileMenuToggle" class="menu-toggle-btn" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobileDrawerBackdrop">
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ফলিকা হোম পেজ">
+        <img src="../assets/images/folika-logo.jpg" alt="" class="brand-logo">
+        <div class="brand-text-wrap">
+          <span class="brand-title" data-i18n="brand_title">ফলিকা</span>
+          <span class="brand-tagline" data-i18n="brand_tagline">কৃষকের ডিজিটাল সঙ্গী</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="../index.html" class="btn btn-sm btn-secondary">হোম</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sub-nav-bar" aria-label="প্রধান মেনু">
+    <div class="container">
+      <div class="nav-pills-wrap"></div>
+    </div>
+  </nav>
+
+  <main id="loginMain" class="main-content" role="main">
+    <div class="container" style="max-width: 480px;">
+      <section class="card" style="margin-top: 24px; border-top: 4px solid var(--color-primary);">
+        <div class="section-header" style="text-align: center; display: block;">
+          <h1 class="text-h2" style="color: var(--color-primary); margin-bottom: 4px;">কৃষক পরিচয় যাচাই</h1>
+          <p id="loginStepIndicator" class="text-body-sm text-secondary">ধাপ ১/২ — মোবাইল নম্বর দিন</p>
+        </div>
+        <div id="loginStatus" class="alert" role="status" aria-live="polite" style="display:none; margin-bottom: 16px;">
+          <div class="alert-content"><span id="loginStatusText"></span></div>
+        </div>
+        <form id="mobileForm" novalidate>
+          <div class="form-group">
+            <label for="mobileInput" class="form-label">মোবাইল নম্বর</label>
+            <input type="tel" id="mobileInput" class="form-control" placeholder="01XXXXXXXXX"
+              inputmode="numeric" autocomplete="tel" maxlength="11" aria-describedby="mobileHelp" required
+              style="min-height: 48px; font-size: 18px; letter-spacing: 1px;">
+            <small id="mobileHelp" class="text-caption">১১ সংখ্যার বাংলাদেশি মোবাইল নম্বর দিন। ডেমো: ০১৭১১১১১১১১১</small>
+          </div>
+          <button type="submit" id="sendOtpBtn" class="btn btn-primary" style="width: 100%; min-height: 48px;">কোড পাঠান</button>
+        </form>
+        <form id="otpForm" novalidate style="display:none;">
+          <div class="form-group">
+            <label for="otpInput" class="form-label">এসএমএসে আসা ৬ অঙ্কের কোড</label>
+            <input type="text" id="otpInput" class="form-control" placeholder="৬ অঙ্কের কোড"
+              inputmode="numeric" autocomplete="one-time-code" maxlength="6" required
+              style="min-height: 48px; font-size: 22px; letter-spacing: 6px; text-align: center;">
+            <small class="text-caption">
+              <span id="otpTargetText"></span> নম্বরে পাঠানো কোড লিখুন
+              <span id="otpTimer" class="font-semibold"></span>
+            </small>
+          </div>
+          <button type="submit" id="verifyOtpBtn" class="btn btn-primary" style="width: 100%; min-height: 48px;">যাচাই করে প্রবেশ করুন</button>
+          <button type="button" id="resendOtpBtn" class="btn btn-primary" style="width: 100%; min-height: 48px; margin-top: 10px; display:none;" disabled>আবার কোড পাঠান</button>
+          <button type="button" id="changeMobileBtn" class="btn btn-secondary" style="width: 100%; min-height: 44px; margin-top: 10px;">নম্বর বদলান</button>
+        </form>
+      </section>
+      <p class="text-center" style="margin-top: 16px;">
+        <a href="../index.html" class="btn btn-sm btn-secondary">হোমে ফিরে যান</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/page-copy.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/main.js?v=20260829"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

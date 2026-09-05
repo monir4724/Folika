@@ -1,0 +1,1133 @@
+/* ==========================================================================
+   FOLIKA - Component Specifications & Wireframe Layouts
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Buttons (Min tap target 44x44px)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-button);
+  padding: 12px 20px;
+  min-height: var(--tap-target-min);
+  min-width: var(--tap-target-min);
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: var(--transition-base);
+  user-select: none;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  background-color: var(--color-bg-secondary) !important;
+  color: var(--color-text-disabled) !important;
+  border-color: var(--color-border) !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF !important;
+  border-color: var(--color-primary);
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+.btn-primary:active:not(:disabled) {
+  background-color: var(--color-primary-active);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary) !important;
+  border: 2px solid var(--color-primary);
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--color-primary-tint);
+}
+
+.btn-tertiary {
+  background-color: transparent;
+  color: var(--color-primary) !important;
+  border-color: transparent;
+}
+.btn-tertiary:hover:not(:disabled) {
+  background-color: var(--color-primary-tint);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: #1A1A1A !important;
+  border-color: var(--color-accent);
+}
+.btn-accent:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-danger {
+  background-color: var(--color-error);
+  color: #FFFFFF !important;
+  border-color: var(--color-error);
+}
+.btn-danger:hover:not(:disabled) {
+  background-color: #991B1B;
+}
+
+.btn-gps {
+  background-color: #2E7D32;
+  color: #FFFFFF !important;
+  border-color: #2E7D32;
+  font-weight: bold;
+  min-height: 48px;
+  height: 48px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.btn-gps:hover {
+  background-color: #1B5E20;
+}
+
+.location-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+  gap: var(--space-8);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .location-bar {
+    grid-template-columns: minmax(140px, 1fr) minmax(140px, 1fr) minmax(140px, 1fr) 120px;
+  }
+}
+
+.location-bar-manual {
+  display: contents;
+}
+
+.location-field {
+  min-width: 0;
+  width: 100%;
+}
+
+.location-field .form-control {
+  min-height: 44px;
+  height: 44px;
+  width: 100%;
+}
+
+.location-bar-gps {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.location-bar-gps .btn-gps {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  min-height: 44px;
+}
+
+@media (min-width: 768px) {
+  .location-bar-gps .btn-gps {
+    min-width: 120px;
+  }
+}
+
+.plan-inputs-bar.ls-inputs-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: end;
+}
+
+@media (min-width: 768px) {
+  .plan-inputs-bar.ls-inputs-bar {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+.ls-inputs-bar > div {
+  min-width: 0;
+  width: 100%;
+}
+
+.ls-inputs-bar .form-control {
+  min-height: 44px;
+  height: 44px;
+  width: 100%;
+}
+
+#lsShedSize[readonly] {
+  background-color: var(--color-bg-primary);
+  cursor: default;
+}
+
+/* Crop plan workflow grid */
+.plan-workflow-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  margin-top: var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .plan-workflow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.workflow-card {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-16);
+}
+
+.workflow-card-title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-12);
+  padding-bottom: var(--space-8);
+  border-bottom: 2px solid var(--color-primary-tint);
+}
+
+.wf-hidden {
+  display: none !important;
+}
+
+.folika-suggest-list {
+  margin: 8px 0 0;
+  padding-left: 1.25rem;
+  line-height: 1.55;
+}
+
+.folika-suggest-list li {
+  margin-bottom: 6px;
+}
+
+.folika-suggest-list li:last-child {
+  margin-bottom: 0;
+}
+
+.folika-suggest-text {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.folika-suggest-intro {
+  margin: 0 0 8px;
+  line-height: 1.55;
+}
+
+.crop-empty-state {
+  text-align: center;
+  padding: var(--space-32) var(--space-24);
+}
+
+/* Domain Buttons */
+.btn-domain-crop { background-color: var(--color-crop); color: #FFF !important; }
+.btn-domain-crop:hover { background-color: #1B5E20; }
+.btn-domain-fish { background-color: var(--color-fish); color: #FFF !important; }
+.btn-domain-fish:hover { background-color: #004D40; }
+.btn-domain-livestock { background-color: var(--color-livestock); color: #FFF !important; }
+.btn-domain-livestock:hover { background-color: #3E2723; }
+.btn-domain-disease { background-color: var(--color-disease); color: #FFF !important; }
+.btn-domain-disease:hover { background-color: #B71C1C; }
+.btn-domain-govt { background-color: var(--color-govt); color: #FFF !important; }
+.btn-domain-govt:hover { background-color: #0D47A1; }
+.btn-domain-dealer { background-color: var(--color-dealer); color: #1A1A1A !important; }
+
+.btn-sm {
+  padding: 8px 14px;
+  min-height: var(--tap-target-min);
+  font-size: var(--font-size-body-sm);
+}
+
+.btn-lg {
+  padding: 16px 28px;
+  min-height: 52px;
+  font-size: var(--font-size-body-lg);
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+.btn-icon-only {
+  width: var(--tap-target-min);
+  height: var(--tap-target-min);
+  min-width: var(--tap-target-min);
+  min-height: var(--tap-target-min);
+  padding: 0;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   2. Form Elements & Inputs
+   -------------------------------------------------------------------------- */
+.form-group {
+  margin-bottom: var(--space-16);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.form-label .required {
+  color: var(--color-error);
+}
+
+.form-control {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  line-height: var(--line-height-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-base);
+}
+
+.form-control::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 3px var(--color-primary);
+}
+
+.form-control:disabled {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%232E7D32' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 16px) center;
+  padding-right: 42px;
+}
+
+/* Toggle Switch (44x24px) */
+.toggle-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  min-height: var(--tap-target-min);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.toggle-track {
+  width: 48px;
+  height: 26px;
+  background-color: var(--color-border-input);
+  border-radius: 26px;
+  position: relative;
+  transition: var(--transition-base);
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  transition: var(--transition-base);
+}
+
+.toggle-switch input:checked + .toggle-track {
+  background-color: var(--color-primary);
+}
+
+.toggle-switch input:checked + .toggle-track .toggle-thumb {
+  transform: translateX(22px);
+}
+
+.toggle-switch input:focus-visible + .toggle-track {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Cards & Workflow Containers
+   -------------------------------------------------------------------------- */
+.card {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-20);
+  transition: var(--transition-base);
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: var(--space-16);
+  }
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+  flex-wrap: wrap;
+}
+
+.card-title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-heading);
+}
+
+.card-footer {
+  margin-top: var(--space-16);
+  padding-top: var(--space-16);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+}
+
+/* Wireframe Specific Card Variants */
+.card-domain-crop {
+  border: 1px solid var(--color-crop);
+  border-top: 4px solid var(--color-crop);
+}
+.card-domain-fish {
+  border: 1px solid var(--color-fish);
+  border-top: 4px solid var(--color-fish);
+}
+.card-domain-livestock {
+  border: 1px solid var(--color-livestock);
+  border-top: 4px solid var(--color-livestock);
+}
+.card-domain-community {
+  border: 1px solid var(--color-community);
+  border-top: 4px solid var(--color-community);
+}
+.card-domain-disease {
+  border: 1px solid var(--color-disease);
+  border-top: 4px solid var(--color-disease);
+}
+.card-domain-dealer {
+  border: 1px solid var(--color-dealer);
+  border-top: 4px solid var(--color-dealer);
+}
+.card-domain-govt {
+  border: 1px solid var(--color-govt);
+  border-top: 4px solid var(--color-govt);
+}
+.card-domain-accent {
+  border: 1px solid var(--color-accent);
+  border-top: 4px solid var(--color-accent);
+}
+
+/* Dashboard module cards — equal height & aligned */
+.dashboard-module-grid {
+  align-items: stretch;
+}
+
+.dashboard-module-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 220px;
+}
+
+.dashboard-module-card .card-header {
+  min-height: 32px;
+  margin-bottom: var(--space-12);
+  padding: 0;
+}
+
+.dashboard-module-card .card-title {
+  margin: 0 0 var(--space-8);
+  font-size: var(--font-size-h4);
+  line-height: 1.3;
+}
+
+.dashboard-module-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.dashboard-module-desc {
+  flex: 1 1 auto;
+  margin-bottom: 0 !important;
+  line-height: 1.55;
+}
+
+.dashboard-module-footer {
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  padding: var(--space-12) 0 0 !important;
+  border-top: 1px solid var(--color-border);
+}
+
+.dashboard-module-footer .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   4. Greeting & Live Digital Clock Banner (Wireframe 1)
+   -------------------------------------------------------------------------- */
+.greeting-clock-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-16) var(--space-20);
+  margin-bottom: var(--space-20);
+  box-shadow: var(--shadow-card);
+  flex-wrap: wrap;
+}
+
+.greeting-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.greeting-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-primary-tint);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  border: 2px solid var(--color-primary);
+}
+
+.greeting-text {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.greeting-subtext {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-secondary);
+}
+
+.clock-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+}
+
+.clock-timer {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+}
+
+.clock-date {
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.clock-season {
+  font-size: var(--font-size-caption);
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* --------------------------------------------------------------------------
+   5. Weather Update Widget (Wireframe 1)
+   -------------------------------------------------------------------------- */
+.weather-widget {
+  background-color: var(--color-bg-primary);
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-20);
+  margin-bottom: var(--space-24);
+  box-shadow: var(--shadow-card);
+}
+
+.weather-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-16);
+}
+
+.weather-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.weather-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .weather-info-grid {
+    grid-template-columns: 1.2fr 1fr 1.5fr;
+  }
+}
+
+.weather-temp-display {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.weather-temp-val {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   6. Plan Management Tabs & Dimension Bars (Wireframes 2, 3, 4)
+   -------------------------------------------------------------------------- */
+.plan-page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  width: 100%;
+  margin-bottom: var(--space-16);
+}
+
+.plan-tabs-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  overflow-x: auto;
+  margin-bottom: 0;
+  padding-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.plan-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 6px 12px;
+  min-height: 36px;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition-base);
+}
+
+.plan-tab-btn.active {
+  background-color: #546E7A;
+  color: #FFFFFF;
+  border-color: #546E7A;
+}
+
+.plan-tab-btn.active-crop {
+  background-color: var(--color-crop);
+  color: #FFFFFF;
+  border-color: var(--color-crop);
+}
+
+.plan-tab-btn.active-fish {
+  background-color: var(--color-fish);
+  color: #FFFFFF;
+  border-color: var(--color-fish);
+}
+
+.plan-tab-btn.active-livestock {
+  background-color: var(--color-livestock);
+  color: #FFFFFF;
+  border-color: var(--color-livestock);
+}
+
+/* Dimension & Location Input Bar */
+.plan-inputs-bar {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-16);
+  margin-bottom: var(--space-20);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 640px) {
+  .plan-inputs-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .plan-inputs-bar {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.calc-result-box {
+  background-color: var(--color-primary-tint);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   7. 4-Column Plan Workflow Grid (Crop, Fish, Livestock)
+   -------------------------------------------------------------------------- */
+.plan-workflow-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  margin-bottom: var(--space-24);
+}
+
+@media (min-width: 640px) {
+  .plan-workflow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .plan-workflow-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.workflow-card {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.workflow-card-title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Layer Boxes for Fish */
+.layer-box {
+  border: 2px solid var(--color-fish);
+  background-color: var(--color-fish-tint);
+  border-radius: var(--radius-sm);
+  padding: var(--space-12);
+  margin-bottom: var(--space-8);
+}
+
+/* Plan Actions Bar (Reminder, Edit, Delete) */
+.plan-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  padding: var(--space-16);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-20);
+  flex-wrap: wrap;
+}
+
+.btn-plan-action {
+  flex: 1;
+  min-width: 140px;
+}
+
+/* --------------------------------------------------------------------------
+   8. 3-Column Community Layout (Wireframe 5)
+   -------------------------------------------------------------------------- */
+.community-3col-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-20);
+}
+
+@media (min-width: 768px) {
+  .community-3col-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .community-3col-grid {
+    grid-template-columns: 1fr 1fr 1.2fr;
+  }
+}
+
+.community-col {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-20);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.community-col-header {
+  padding-bottom: var(--space-12);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   9. Alerts, Badges & Status
+   -------------------------------------------------------------------------- */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  padding: var(--space-16);
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-small);
+  margin-bottom: var(--space-16);
+}
+
+.alert-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.alert-title {
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-4);
+}
+
+.alert-success {
+  background-color: var(--color-success-tint);
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.alert-warning {
+  background-color: var(--color-warning-tint);
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.alert-danger,
+.alert-error {
+  background-color: var(--color-error-tint);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.alert-info {
+  background-color: var(--color-info-tint);
+  border-color: var(--color-info);
+  color: var(--color-info);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+}
+
+.badge-crop { background-color: var(--color-crop-tint); color: var(--color-crop); }
+.badge-fish { background-color: var(--color-fish-tint); color: var(--color-fish); }
+.badge-livestock { background-color: var(--color-livestock-tint); color: var(--color-livestock); }
+.badge-community { background-color: var(--color-community-tint); color: var(--color-community); }
+.badge-disease { background-color: var(--color-disease-tint); color: var(--color-disease); }
+.badge-dealer { background-color: var(--color-dealer-tint); color: var(--color-dealer); }
+.badge-govt { background-color: var(--color-govt-tint); color: var(--color-govt); }
+.badge-verified { background-color: var(--color-govt-tint); color: var(--color-govt); border: 1px solid var(--color-govt); }
+.badge-expert { background-color: var(--color-accent-tint); color: #B26A00; }
+.badge-severe { background-color: var(--color-error-tint); color: var(--color-error); border: 1px solid var(--color-error); }
+
+/* --------------------------------------------------------------------------
+   10. Tables & Financial Summaries
+   -------------------------------------------------------------------------- */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-20);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--font-size-body);
+}
+
+.table th {
+  background-color: var(--color-bg-secondary);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  padding: 14px 16px;
+  border-bottom: 2px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 16px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-tertiary);
+}
+
+.table tbody tr:hover {
+  background-color: var(--color-primary-tint);
+}
+
+/* --------------------------------------------------------------------------
+   11. Modals & Accessibility Focus Trap
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16);
+}
+
+.modal-backdrop.is-open {
+  display: flex;
+}
+
+.modal-container {
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-modal);
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--space-24);
+  position: relative;
+  animation: modalPop 0.25s var(--transition-spring);
+}
+
+@keyframes modalPop {
+  0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal-title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.modal-close-btn {
+  width: var(--tap-target-min);
+  height: var(--tap-target-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--color-text-secondary);
+  font-size: 22px;
+  transition: var(--transition-base);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-12);
+  padding-top: var(--space-16);
+  border-top: 1px solid var(--color-border);
+}
+
+/* --------------------------------------------------------------------------
+   12. Disease Upload Dropzone
+   -------------------------------------------------------------------------- */
+.dropzone {
+  border: 2px dashed #EF9A9A;
+  background-color: var(--color-disease-tint);
+  border-radius: var(--radius-md);
+  padding: var(--space-32) var(--space-16);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+}
+
+.dropzone:hover,
+.dropzone.dragover {
+  background-color: #FFCDD2;
+  border-color: var(--color-disease);
+}
+
+.dropzone-icon {
+  width: 56px;
+  height: 56px;
+  color: var(--color-disease);
+}
+
+/* Rating Stars */
+.rating-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--color-accent);
+  font-size: 18px;
+}
+.rating-stars .star-empty {
+  color: var(--color-text-disabled);
+}
+
+/* Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--color-primary-tint);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

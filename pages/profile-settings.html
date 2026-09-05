@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>প্রোফাইল সেটিংস — ফলিকা</title>
+  <meta name="description" content="ফলিকা প্রোফাইল সেটিংস — ব্যক্তিগত তথ্য, নিরাপত্তা ও ইতিহাস">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css?v=20260829">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body data-profile-page="true">
+  <a href="#profileSettingsMain" class="skip-link">মূল বিষয়বস্তুতে যান</a>
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <button id="mobileMenuToggle" class="menu-toggle-btn" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobileDrawerBackdrop">
+        <span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ফলিকা হোম">
+        <img src="../assets/images/folika-logo.jpg" alt="" class="brand-logo">
+        <div class="brand-text-wrap"><span class="brand-title">ফলিকা</span><span class="brand-tagline">কৃষকের ডিজিটাল সঙ্গী</span></div>
+      </a>
+      <div class="header-actions">
+        <a href="profile.html" class="header-user-widget" aria-label="প্রোফাইল"><div class="header-user-avatar" aria-hidden="true">ফ</div></a>
+      </div>
+    </div>
+  </header>
+  <nav class="sub-nav-bar" aria-label="প্রধান মেনু"><div class="container"><div class="nav-pills-wrap"></div></div></nav>
+  <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true">
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="মোবাইল নেভিগেশন">
+      <div class="mobile-drawer-header">
+        <div class="flex items-center gap-8"><img src="../assets/images/folika-logo.jpg" alt="" style="height:48px;"><span class="font-bold text-white">ফলিকা মেনু</span></div>
+        <button id="mobileDrawerClose" class="btn-icon-only text-white" aria-label="বন্ধ">বন্ধ</button>
+      </div>
+      <div class="mobile-drawer-links"></div>
+    </div>
+  </div>
+
+  <main id="profileSettingsMain" class="main-content" role="main">
+    <div class="container" style="max-width: 840px;">
+      <div class="section-header" style="margin-bottom: 20px;">
+        <h1 class="text-h1">প্রোফাইল সেটিংস</h1>
+        <p class="text-body text-secondary">ব্যক্তিগত তথ্য, নিরাপত্তা ও অ্যাকাউন্ট ব্যবস্থাপনা</p>
+        <a href="profile.html" class="btn btn-sm btn-secondary" style="margin-top:8px;">← প্রোফাইল ড্যাশবোর্ড</a>
+      </div>
+
+      <p id="profileSettingsMsg" class="text-caption" role="status" aria-live="polite"></p>
+
+      <!-- 1. Basic Information -->
+      <section class="card profile-settings-section" id="secBasic">
+        <h2 class="text-h3 text-primary">১. মূল তথ্য (Basic Information)</h2>
+        <div class="profile-avatar-upload">
+          <div id="settingsAvatar" class="profile-avatar" aria-hidden="true">ফ</div>
+          <div style="flex:1;">
+            <label class="form-label" for="avatarInput">প্রোফাইল ছবি</label>
+            <input type="file" id="avatarInput" class="form-control" accept="image/*">
+            <div id="avatarCropWrap" class="profile-avatar-crop-wrap" hidden>
+              <canvas id="avatarCropCanvas" width="200" height="200" aria-label="ছবি ক্রপ"></canvas>
+              <label class="form-label" for="avatarZoom">জুম</label>
+              <input type="range" id="avatarZoom" min="1" max="3" step="0.05" value="1">
+              <button type="button" id="btnSaveAvatar" class="btn btn-sm btn-primary">ছবি সংরক্ষণ</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group"><label class="form-label" for="psName">পূর্ণ নাম / প্রদর্শন নাম</label><input type="text" id="psName" class="form-control" maxlength="150"></div>
+        <div class="form-group"><label class="form-label" for="psDob">জন্ম তারিখ</label><input type="date" id="psDob" class="form-control"></div>
+        <div class="form-group"><label class="form-label" for="psGender">লিঙ্গ</label>
+          <select id="psGender" class="form-control">
+            <option value="">নির্বাচন করুন</option>
+            <option value="male">পুরুষ</option>
+            <option value="female">মহিলা</option>
+            <option value="other">অন্যান্য</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label" for="psAddress">ঠিকানা / অবস্থান</label><textarea id="psAddress" class="form-control" rows="2"></textarea></div>
+        <button type="button" id="btnSaveBasic" class="btn btn-primary">মূল তথ্য সংরক্ষণ</button>
+      </section>
+
+      <!-- 2. Contact -->
+      <section class="card profile-settings-section" id="secContact">
+        <h2 class="text-h3 text-primary">২. যোগাযোগের তথ্য</h2>
+        <div class="form-group"><label class="form-label" for="psEmail">ইমেইল</label><input type="email" id="psEmail" class="form-control" placeholder="name@example.com"></div>
+        <div class="form-group"><label class="form-label" for="psPhone">মোবাইল নম্বর</label><input type="tel" id="psPhone" class="form-control" readonly></div>
+        <button type="button" id="btnSaveContact" class="btn btn-primary">যোগাযোগ সংরক্ষণ</button>
+      </section>
+
+      <!-- 3. Security -->
+      <section class="card profile-settings-section" id="secSecurity">
+        <h2 class="text-h3 text-primary">৩. অ্যাকাউন্ট নিরাপত্তা</h2>
+        <div class="form-group"><label class="form-label" for="psNewPass">নতুন পাসওয়ার্ড সেট করুন</label><input type="password" id="psNewPass" class="form-control" autocomplete="new-password"></div>
+        <div class="form-group"><label class="form-label" for="psConfirmPass">পাসওয়ার্ড নিশ্চিত করুন</label><input type="password" id="psConfirmPass" class="form-control" autocomplete="new-password"></div>
+        <button type="button" id="btnChangePass" class="btn btn-secondary">পাসওয়ার্ড পরিবর্তন</button>
+        <div class="profile-setting-row" style="margin-top:16px;">
+          <div><div class="font-bold text-body">দুই-স্তর যাচাইকরণ (2FA)</div><div class="text-caption">OTP দিয়ে অতিরিক্ত নিরাপত্তা</div></div>
+          <label class="toggle-switch"><input type="checkbox" id="ps2fa"><span class="toggle-track"><span class="toggle-thumb"></span></span></label>
+        </div>
+        <h3 class="text-body font-bold" style="margin-top:16px;">লগইন কার্যকলাপ</h3>
+        <div id="loginActivityList" class="profile-activity-list"></div>
+        <h3 class="text-body font-bold" style="margin-top:16px;">সংযুক্ত ডিভাইস</h3>
+        <div id="connectedDevicesList" class="profile-activity-list"></div>
+      </section>
+
+      <!-- 4. Notifications -->
+      <section class="card profile-settings-section" id="secNotify">
+        <h2 class="text-h3 text-primary">৪. নোটিফিকেশন</h2>
+        <div class="profile-setting-row"><div><div class="font-bold text-body">পুশ নোটিফিকেশন</div></div><label class="toggle-switch"><input type="checkbox" id="psNotifyPush"><span class="toggle-track"><span class="toggle-thumb"></span></span></label></div>
+        <div class="profile-setting-row"><div><div class="font-bold text-body">SMS নোটিফিকেশন</div></div><label class="toggle-switch"><input type="checkbox" id="psNotifySms"><span class="toggle-track"><span class="toggle-thumb"></span></span></label></div>
+      </section>
+
+      <!-- 5. Account Management -->
+      <section class="card profile-settings-section" id="secAccount">
+        <h2 class="text-h3 text-primary">৫. অ্যাকাউন্ট ব্যবস্থাপনা</h2>
+        <button type="button" id="btnDeactivate" class="btn btn-secondary btn-block">অ্যাকাউন্ট সাময়িক নিষ্ক্রিয়</button>
+        <button type="button" id="btnDownloadData" class="btn btn-secondary btn-block" style="margin-top:8px;">আমার ডাটা ডাউনলোড</button>
+        <button type="button" id="btnDeleteAccount" class="btn btn-sm btn-block" style="margin-top:8px;color:var(--color-error);border:1px solid var(--color-error);">অ্যাকাউন্ট স্থায়ী মুছুন</button>
+        <button type="button" id="btnLogout" class="btn btn-secondary btn-block" style="margin-top:8px;">লগআউট</button>
+        <button type="button" id="btnLogoutAll" class="btn btn-secondary btn-block" style="margin-top:8px;">সব ডিভাইস থেকে লগআউট</button>
+      </section>
+
+      <!-- 6. Activity & History -->
+      <section class="card profile-settings-section" id="secHistory">
+        <h2 class="text-h3 text-primary">৬. কার্যকলাপ ও ইতিহাস</h2>
+        <p class="text-caption text-secondary">আপনার অ্যাকাউন্ট খোলার পর থেকে তৈরি সকল চলমান পরিকল্পনা। মুছে ফেলা পরিকল্পনা এখানে দেখাবে না।</p>
+        <div id="fullActivityList" class="profile-activity-list"></div>
+      </section>
+
+      <a href="more.html" class="btn btn-tertiary btn-block" style="margin-top:12px;">আরও অপশন (ভাষা, থিম)</a>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="মোবাইল দ্রুত নেভিগেশন"></nav>
+  <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-bottom"><p>© ২০২৬ ফলিকা</p></div></div></footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/api-client.js"></script>
+  <script src="../js/offline-sync.js"></script>
+  <script src="../js/profile-utils.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/accessibility-widget.js?v=20260830g"></script>
+  <script src="../js/main.js?v=20260830d"></script>
+  <script src="../js/profile-settings.js"></script>
+</body>
+</html>

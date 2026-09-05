@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>মৎস্য পরিকল্পনা — ফলিকা</title>
+  <meta name="description" content="ফলিকা মৎস্য পরিকল্পনা — পুকুরের মাপ, স্তরভিত্তিক মাছ ও খাদ্য তালিকা">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css?v=20260829">
+
+</head>
+<body>
+
+  <a href="#fishMain" class="skip-link" data-i18n="skip_content">মূল বিষয়বস্তুতে যান</a>
+
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <button id="mobileMenuToggle" class="menu-toggle-btn" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobileDrawerBackdrop">
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ফলিকা হোম পেজ">
+        <img src="../assets/images/folika-logo.jpg" alt="" class="brand-logo">
+        <div class="brand-text-wrap">
+          <span class="brand-title" data-i18n="brand_title">ফলিকা</span>
+          <span class="brand-tagline" data-i18n="brand_tagline">কৃষকের ডিজিটাল সঙ্গী</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="profile.html" class="header-user-widget" aria-label="ইউজার প্রোফাইল">
+          <div class="header-user-info">
+            <span class="header-user-name">Rohim mia</span>
+</div>
+          <div class="header-user-avatar" aria-hidden="true">ম</div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sub-nav-bar" aria-label="প্রধান মেনু">
+    <div class="container">
+      <div class="nav-pills-wrap"></div>
+    </div>
+  </nav>
+
+  <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true">
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="মোবাইল নেভিগেশন">
+      <div class="mobile-drawer-header">
+        <div class="flex items-center gap-8">
+          <img src="../assets/images/folika-logo.jpg" alt="ফলিকা লোগো" style="height: 48px;">
+          <span class="font-bold text-white" data-i18n="menu_title">ফলিকা মেনু</span>
+        </div>
+        <button id="mobileDrawerClose" class="btn-icon-only text-white" aria-label="মেনু বন্ধ করুন">বন্ধ</button>
+      </div>
+      <div class="mobile-drawer-links"></div>
+    </div>
+  </div>
+
+  <main id="fishMain" class="main-content" role="main">
+    <div class="container" id="fishPlanRoot">
+      <div class="plan-page-stack" style="margin-bottom: 16px;">
+        <div class="folika-location-mount" id="fishLocationMount"></div>
+        <div class="plan-tabs-bar" id="fishPlanTabs"></div>
+      </div>
+      <section class="plan-inputs-bar" aria-label="পুকুরের মাপ">
+        <div>
+          <label class="form-label" for="fishPondLength">পুকুরের দৈর্ঘ্য (ফুট):</label>
+          <input type="number" id="fishPondLength" class="form-control" value="" placeholder="ফুট">
+        </div>
+        <div>
+          <label class="form-label" for="fishPondWidth">পুকুরের প্রস্থ (ফুট):</label>
+          <input type="number" id="fishPondWidth" class="form-control" value="" placeholder="ফুট">
+        </div>
+        <div>
+          <label class="form-label" for="fishPondDepth">গড় গভীরতা (ফুট):</label>
+          <div class="flex gap-8 flex-wrap items-end">
+            <input type="number" id="fishPondDepth" class="form-control" value="" min="1" step="1" inputmode="numeric" placeholder="যেমন ৬" aria-describedby="fishDepthHint" style="flex:1;min-width:120px;">
+            <button type="button" id="btnFishCalcLayers" class="btn btn-primary" style="min-height:48px;">স্তর হিসাব</button>
+          </div>
+          <span id="fishDepthHint" class="text-caption text-secondary">গভীরতা দিয়ে «স্তর হিসাব» চাপলে উপযুক্ত মাছের স্তর সাজানো হবে</span>
+        </div>
+        <div data-fish-step="duration" class="wf-hidden">
+          <label class="form-label" for="fishCultureDuration">চাষের মেয়াদ:</label>
+          <select id="fishCultureDuration" class="form-control">
+            <option value="">মেয়াদ নির্বাচন করুন…</option>
+            <option value="1year">১ বছর (পূর্ণ চক্র)</option>
+            <option value="6months">৬ মাস (এক্সটেন্সিভ)</option>
+            <option value="multi">মাল্টি-স্পিশিজ পলিকালচার</option>
+          </select>
+        </div>
+      </section>
+      <p class="text-caption text-secondary" id="fishStepHint" style="margin-bottom:12px;">প্রথমে পুকুরের দৈর্ঘ্য, প্রস্থ ও গভীরতা লিখে «স্তর হিসাব» চাপুন।</p>
+      <section class="card wf-hidden" data-fish-step="layers-summary" style="background: var(--color-fish-tint); border: 2px solid var(--color-fish); margin-bottom: 20px;">
+        <div class="flex items-center justify-between flex-wrap gap-12">
+          <div>
+            <span class="text-caption font-bold text-fish">গভীরতা অনুযায়ী মাছের স্তর:</span>
+            <div id="fishLayerCountDisplay" class="text-h3 font-bold" style="color: var(--color-fish); margin-top: 4px;">গভীরতা দিয়ে স্তর হিসাব করুন</div>
+          </div>
+          <div class="text-right">
+            <div class="text-caption">মোট পুকুর এলাকা:</div>
+            <div id="fishPondAreaDisplay" class="text-body font-bold text-fish"></div>
+          </div>
+        </div>
+      </section>
+      <section id="fishLayerBoxesContainer" class="grid grid-cols-1 grid-cols-md-3 gap-16 wf-hidden" data-fish-step="layer-cards" style="margin-bottom: 24px;" aria-label="স্তরভিত্তিক মাছ ও খাদ্য তালিকা"></section>
+      <section id="fishPrepSection" class="card card-domain-fish wf-hidden" data-fish-step="prep" style="margin-bottom: 24px;" aria-label="পুকুর প্রস্তুতি ও পানি মান">
+        <div class="card-header">
+          <h2 class="card-title text-fish">পুকুর প্রস্তুতি ও পানি মান (চুন, গobar ও সার)</h2>
+          <span class="badge badge-fish" id="fishPrepBadge">পুকুর প্রস্তুতি সুপারিশ</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="table" aria-label="পুকুর প্রস্তুতি তালিকা">
+            <thead>
+              <tr>
+                <th>উপাদান / কাজ</th>
+                <th>প্রস্তাবিত পরিমাণ</th>
+                <th>প্রয়োগ ও সময়</th>
+                <th>উদ্দেশ্য</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>চুন (কাঁচা / পোড়া)</strong></td>
+                <td id="fishLimeDose">পুকুরের আকার অনুযায়ী</td>
+                <td>মাছ ছাড়ার ৭–১০ দিন আগে ছড়িয়ে দিন</td>
+                <td>পুকুর জীবাণুমুক্ত ও pH ঠিক রাখে</td>
+              </tr>
+              <tr>
+                <td><strong>গোবর/জৈব সার</strong></td>
+                <td id="fishDungDose">পুকুরের ২–৩ সেমি</td>
+                <td>প্লাংকটন বৃদ্ধির জন্য</td>
+                <td>প্রাকৃতিক খাদ্য তৈরি</td>
+              </tr>
+              <tr>
+                <td><strong>ইউরিয়া ও TSP</strong></td>
+                <td id="fishUreaDose">ইউরিয়া ২ কেজি + TSP ১ কেজি / বিঘা</td>
+                <td>পানিতে প্লাংকটন বাড়ায়</td>
+                <td>মাছের প্রাকৃতik খাদ্য</td>
+              </tr>
+              <tr>
+                <td><strong>জিওলাইট ও KMnO4</strong></td>
+                <td id="fishZeoliteDose">প্রয়োজন অনুযায়ী</td>
+                <td>অ্যামোনিয়া ও গন্ধ কমায়</td>
+                <td>পানির গুণমান রক্ষা</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="alert alert-info" style="margin-bottom: 0;">
+          <div class="alert-content">
+            <h4 class="alert-title font-bold">গুরুত্বপূর্ণ পরামর্শ:</h4>
+            <ul style="padding-left: 18px; margin-top: 4px; line-height: 1.7;">
+              <li><strong>পানি বিনিময়:</strong> গভীর পুকুরে ১০–১৫% পানি সাপ্তাহিক বদলান</li>
+              <li><strong>অক্সিজেন:</strong> রাতে অক্সিজেন কমলে এরিয়েটর চালু রাখুন</li>
+              <li><strong>খাদ্য তালিকা:</strong> মাছের ওজন অনুযায়ী দৈনিক খাদ্য দিন</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="plan-actions-bar">
+        <button class="btn btn-primary btn-plan-action" data-modal-target="#fishReminderModal">রিমাইন্ডার</button>
+        <button type="button" class="btn btn-secondary btn-plan-action" id="btnEditFishPlan">পরিকল্পনা সম্পাদনা</button>
+        <button class="btn btn-danger btn-plan-action" id="btnDeleteFishPlan">পরিকল্পনা মুছুন</button>
+      </section>
+      <div style="margin-top: 24px;">
+        <button type="button" class="btn btn-primary btn-lg" id="btnAddFishPlanBottom">+ নতুন মৎস্য পরিকল্পনা যোগ করুন</button>
+        <p id="fishSyncStatus" class="text-caption text-secondary" style="margin-top: 8px;"></p>
+      </div>
+    </div>
+
+  <div id="fishEditPlanModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title">মৎস্য পরিকল্পনা সম্পাদনা</h3>
+        <button class="modal-close-btn" data-modal-close aria-label="বন্ধ করুন">বন্ধ</button>
+      </div>
+      <div class="modal-body">
+        <form id="fishEditPlanForm">
+          <div class="form-group">
+            <label class="form-label" for="fishEditName">পরিকল্পনার নাম</label>
+            <input type="text" id="fishEditName" class="form-control" required maxlength="80">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fishEditLength">পুকুরের দৈর্ঘ্য (ফুট)</label>
+            <input type="number" id="fishEditLength" class="form-control" min="1" step="0.1" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fishEditWidth">পুকুরের প্রস্থ (ফুট)</label>
+            <input type="number" id="fishEditWidth" class="form-control" min="1" step="0.1" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fishEditDepth">গড় গভীরতা (ফুট)</label>
+            <input type="number" id="fishEditDepth" class="form-control" min="0.5" step="0.1" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fishEditDuration">চাষের মেয়াদ</label>
+            <select id="fishEditDuration" class="form-control">
+              <option value="1year">১ বছর (পূর্ণ চক্র)</option>
+              <option value="6months">৬ মাস (এক্সটেন্সিভ)</option>
+              <option value="multi">মাল্টি-স্পিশিজ পলিকালচার</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-modal-close>বাতিল</button>
+            <button type="submit" class="btn btn-primary">সংরক্ষণ করুন</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="fishReminderModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title">মৎস্য পরিকল্পনা রিমাইন্ডার</h3>
+        <button class="modal-close-btn" data-modal-close aria-label="বন্ধ করুন">বন্ধ</button>
+      </div>
+      <div class="modal-body">
+        <form id="fishReminderForm">
+          <p id="fishReminderStatus" class="text-caption text-secondary" style="margin-bottom: 8px;"></p>
+          <ul id="fishReminderList" class="text-body-sm" style="padding-left: 18px; margin-bottom: 12px; line-height: 1.7;"></ul>
+          <div class="form-group">
+            <label class="form-label" for="fishRemindTask">কাজের ধরন</label>
+            <select id="fishRemindTask" class="form-control">
+              <option value="lime">চুন ও জীবাণুমুক্তকরণ</option>
+              <option value="feed">দৈনিক খাদ্য ও স্তরভিত্তিক খাওয়ানো</option>
+              <option value="water">পানির ১০% বিনিময়</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fishRemindDate">তারিখ</label>
+            <input type="date" id="fishRemindDate" class="form-control" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-modal-close>বাতিল</button>
+            <button type="submit" class="btn btn-primary">সংরক্ষণ করুন</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="মোবাইল দ্রুত নেভিগেশন"></nav>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© ২০২৬ ফলিকা • <span data-i18n="footer_rights">সর্বস্বত্ব সংরক্ষিত</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/geo-bd.js"></script>
+  <script src="../js/location.js"></script>
+  <script src="../js/fish-data.js"></script>
+  <script src="../js/suggestion-list.js"></script>
+  <script src="../js/fish-plan.js?v=20260830e"></script>
+  <script src="../js/page-copy.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/main.js?v=20260829"></script>
+</body>
+</html>

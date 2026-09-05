@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>কমিউনিটি — ফলিকা</title>
+  <meta name="description" content="ফলিকা কমিউনিটি — কৃষি অফিস, প্রশিক্ষণ ও ডিলার তালিকা">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css?v=20260829">
+  <link rel="stylesheet" href="../css/community.css?v=20260830">
+
+</head>
+<body>
+
+  <a href="#communityMain" class="skip-link" data-i18n="skip_content">মূল বিষয়বস্তুতে যান</a>
+
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <button id="mobileMenuToggle" class="menu-toggle-btn" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobileDrawerBackdrop">
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ফলিকা হোম পেজ">
+        <img src="../assets/images/folika-logo.jpg" alt="" class="brand-logo">
+        <div class="brand-text-wrap">
+          <span class="brand-title" data-i18n="brand_title">ফলিকা</span>
+          <span class="brand-tagline" data-i18n="brand_tagline">কৃষকের ডিজিটাল সঙ্গী</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="profile.html" class="header-user-widget" aria-label="ইউজার প্রোফাইল">
+          <div class="header-user-info">
+            <span class="header-user-name">Rohim mia</span>
+</div>
+          <div class="header-user-avatar" aria-hidden="true">ম</div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sub-nav-bar" aria-label="প্রধান মেনু">
+    <div class="container">
+      <div class="nav-pills-wrap"></div>
+    </div>
+  </nav>
+
+  <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true">
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="মোবাইল নেভিগেশন">
+      <div class="mobile-drawer-header">
+        <div class="flex items-center gap-8">
+          <img src="../assets/images/folika-logo.jpg" alt="ফলিকা লোগো" style="height: 48px;">
+          <span class="font-bold text-white" data-i18n="menu_title">ফলিকা মেনু</span>
+        </div>
+        <button id="mobileDrawerClose" class="btn-icon-only text-white" aria-label="মেনু বন্ধ করুন">বন্ধ</button>
+      </div>
+      <div class="mobile-drawer-links"></div>
+    </div>
+  </div>
+
+  <main id="communityMain" class="main-content" role="main">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 20px;">
+        <div>
+          <h1 class="text-h1">কমিউনিটি</h1>
+          <p class="text-body text-secondary">কৃষি বিশেষজ্ঞ, ফোরাম ও স্থানীয় সেবা</p>
+        </div>
+      </div>
+      <div class="community-3col-grid">
+        <div class="community-col">
+          <div class="community-col-header">
+            <h2 class="text-h3 text-primary">১. অফিস ও হটলাইন</h2>
+            <p class="text-caption">আপনার এলাকার কৃষি/পশু/মৎস্য অফিস — সরকারি ওয়েবসাইট থেকে হালনাগাদ তথ্য</p>
+          </div>
+          <div class="folika-location-mount" id="communityLocationMount" style="margin-bottom: 12px;"></div>
+          <button type="button" id="communityOfficeSearchBtn" class="btn btn-primary btn-block">অনুসন্ধান</button>
+          <div id="communityOfficesMount" class="community-results-mount flex flex-col gap-12"></div>
+        </div>
+        <div class="community-col">
+          <div class="community-col-header">
+            <h2 class="text-h3 text-crop">২. প্রশিক্ষণ ও কর্মশালা</h2>
+            <p class="text-caption">সরকারি ও এনজিও প্রশিক্ষণ</p>
+          </div>
+          <div id="communityTrainingMount" class="community-results-mount flex flex-col gap-12">
+            <div class="card card-domain-crop community-preview-item" style="padding: 14px; margin: 0;">
+              <span class="badge badge-crop">ফসল</span>
+              <h3 class="font-bold text-body">ধানের উচ্চফলন ও জৈব সার ব্যবহার</h3>
+              <p class="text-body-sm text-secondary">স্থান: BRRI, গাজীপুর — তারিখ: ১৫ সেপ্টেম্বর</p>
+              <button class="btn btn-sm btn-domain-crop">অংশগ্রহণের আগ্রহ</button>
+            </div>
+            <div class="card card-domain-fish community-more-item" style="padding: 14px; margin: 0;">
+              <span class="badge badge-fish">মৎস্য</span>
+              <h3 class="font-bold text-body">পলিকালচার ও স্তরভিত্তিক চাষ</h3>
+              <p class="text-body-sm text-secondary">স্থান: মৎস্য প্রশিক্ষণ কেন্দ্র — ২০ সেপ্টেম্বর</p>
+              <button class="btn btn-sm btn-domain-fish">অংশগ্রহণের আগ্রহ</button>
+            </div>
+            <div class="card card-domain-livestock community-more-item" style="padding: 14px; margin: 0;">
+              <span class="badge badge-livestock">প্রাণিসম্পদ</span>
+              <h3 class="font-bold text-body">দুগ্ধবতী গাভীর খাদ্য ও স্বাস্থ্য</h3>
+              <p class="text-body-sm text-secondary">স্থান: উপজেলা ভেট ক্লিনিক — ২৫ সেপ্টেম্বর</p>
+              <button class="btn btn-sm btn-domain-livestock">অংশগ্রহণের আগ্রহ</button>
+            </div>
+          </div>
+        </div>
+        <div class="community-col">
+          <div class="community-col-header">
+            <h2 class="text-h3 text-dealer">৩. ডিলার তালিকা</h2>
+            <p class="text-caption">কালিয়াকৈর উপজেলা — ১০০ জন ডিলার (ফসল, মাছ ও জীবন্ত পশু)</p>
+          </div>
+          <div class="card" style="background: var(--color-bg-secondary); padding: 12px; margin: 0;">
+            <div class="form-group" style="margin-bottom: 8px;">
+              <label class="form-label" for="dealerZilaSelect">জেলা:</label>
+              <select id="dealerZilaSelect" class="form-control">
+                <option value="gazipur" selected>গাজীপুর</option>
+                <option value="bogra">বগুড়া</option>
+                <option value="dhaka">ঢাকা</option>
+                <option value="rajshahi">রাজশাহী</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 8px;">
+              <label class="form-label" for="dealerUpazilaSelect">উপজেলা:</label>
+              <select id="dealerUpazilaSelect" class="form-control">
+                <option value="kaliakair" selected>কালিয়াকৈর</option>
+                <option value="gazipur_sadar">গাজীপুর সদর</option>
+                <option value="kapasia">কাপাসিয়া</option>
+                <option value="sreepur">শ্রীপুর</option>
+                <option value="kaliganj">কালীগঞ্জ</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 8px;">
+              <label class="form-label" for="dealerSectorSelect">খাত:</label>
+              <select id="dealerSectorSelect" class="form-control">
+                <option value="all" selected>সব খাত</option>
+                <option value="crop">ফসল</option>
+                <option value="fish">মৎস্য</option>
+                <option value="livestock">প্রাণিসম্পদ</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 8px;">
+              <label class="form-label" for="dealerItemSelect">পণ্য:</label>
+              <select id="dealerItemSelect" class="form-control">
+                <option value="all" selected>সব পণ্য</option>
+                <option value="fert">সার ও রাসায়নিক</option>
+                <option value="seed">বীজ</option>
+                <option value="pesticide">কীটনাশক</option>
+                <option value="fish_feed">মাছের খাদ্য</option>
+                <option value="cattle_feed">গবাদি খাদ্য</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="dealerSearchInput">খুঁজুন (ঐচ্ছিক):</label>
+              <input type="search" id="dealerSearchInput" class="form-control" placeholder="দোকান, পণ্য বা নাম লিখুন…" autocomplete="off">
+            </div>
+          </div>
+          <button type="button" id="dealerSearchBtn" class="btn btn-primary btn-block">অনুসন্ধান</button>
+          <p class="text-caption text-secondary" id="dealerResultCount" style="margin: 0;"></p>
+          <div class="community-results-mount flex flex-col gap-12" id="dealerResultsList"></div>
+        </div>
+      </div>
+
+      <section class="section" style="margin-top: 28px;" aria-label="কমিউনিটি ফোরাম">
+        <div class="section-header">
+          <h2 class="text-h2 text-primary">কমিউনিটি ফোরাম</h2>
+          <p class="text-body-sm text-secondary">প্রশ্ন লিখুন, অন্য কৃষকের পোস্ট দেখুন।</p>
+        </div>
+        <div class="card" style="margin-bottom: 16px;">
+          <div class="form-group">
+            <label class="form-label" for="forumCategory">খাত</label>
+            <select id="forumCategory" class="form-control">
+              <option value="crop">ফসল</option>
+              <option value="fish">মৎস্য</option>
+              <option value="livestock">প্রাণিসম্পদ</option>
+              <option value="general" selected>সাধারণ</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="forumTitle">শিরোনাম</label>
+            <input id="forumTitle" class="form-control" type="text" maxlength="255" placeholder="সংক্ষেপে প্রশ্ন লিখুন">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="forumBody">বিস্তারিত</label>
+            <textarea id="forumBody" class="form-control" rows="3" placeholder="আপনার অভিজ্ঞতা বা প্রশ্ন লিখুন"></textarea>
+          </div>
+          <button type="button" id="forumSubmitBtn" class="btn btn-primary">পোস্ট করুন</button>
+          <p id="forumStatus" class="text-caption text-secondary" style="margin: 8px 0 0;"></p>
+        </div>
+        <div id="forumPostsMount" class="flex flex-col gap-12"></div>
+      </section>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="মোবাইল দ্রুত নেভিগেশন"></nav>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© ২০২৬ ফলিকা • <span data-i18n="footer_rights">সর্বস্বত্ব সংরক্ষিত</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/geo-bd.js"></script>
+  <script src="../js/location.js"></script>
+  <script src="../js/page-copy.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/community-offices-data.js"></script>
+  <script src="../js/dealers-kaliakoir.js"></script>
+  <script src="../js/main.js?v=20260905b"></script>
+</body>
+</html>

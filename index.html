@@ -1,13 +1,303 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Folika Web</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ফলিকা - কৃষকের ডিজিটাল সঙ্গী</title>
+  <meta name="description" content="ফলিকা - বাংলাদেশি কৃষক, মৎস্যচাষী এবং খামারিদের জন্য একটি পূর্ণাঙ্গ ডিজিটাল কৃষি প্ল্যাটফর্ম">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css?v=20260830h">
+</head>
+<body>
+
+  <a href="#mainContent" class="skip-link" data-i18n="skip_content">মূল বিষয়বস্তুতে যান</a>
+
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <button id="mobileMenuToggle" class="menu-toggle-btn" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobileDrawerBackdrop">
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+      </button>
+
+      <a href="index.html" class="brand-link" aria-label="ফলিকা হোম পেজ">
+        <img src="assets/images/folika-logo.jpg" alt="" class="brand-logo">
+        <div class="brand-text-wrap">
+          <span class="brand-title" data-i18n="brand_title">ফলিকা</span>
+          <span class="brand-tagline" data-i18n="brand_tagline">কৃষকের ডিজিটাল সঙ্গী</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="pages/profile.html" class="header-user-widget" aria-label="ইউজার প্রোফাইল">
+          <div class="header-user-info">
+            <span class="header-user-name">Rohim mia</span>
+          </div>
+          <div class="header-user-avatar" aria-hidden="true">ম</div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sub-nav-bar" aria-label="প্রধান মেনু">
+    <div class="container">
+      <div class="nav-pills-wrap">
+        <a href="index.html" class="nav-pill-btn active" aria-current="page">হোম</a>
+        <a href="pages/crop.html" class="nav-pill-btn">ফসল</a>
+        <a href="pages/fish.html" class="nav-pill-btn">মৎস্য</a>
+        <a href="pages/livestock.html" class="nav-pill-btn">প্রাণিসম্পদ</a>
+        <a href="pages/disease.html" class="nav-pill-btn">রোগ নির্ণয়</a>
+        <a href="pages/community.html" class="nav-pill-btn">কমিউনিটি</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true">
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="মোবাইল নেভিগেশন">
+      <div class="mobile-drawer-header">
+        <div class="flex items-center gap-8">
+          <img src="assets/images/folika-logo.jpg" alt="ফলিকা লোগো" style="height: 48px;">
+          <span class="font-bold text-white" data-i18n="menu_title">ফলিকা মেনু</span>
+        </div>
+        <button id="mobileDrawerClose" class="btn-icon-only text-white" aria-label="মেনু বন্ধ করুন">বন্ধ</button>
+      </div>
+      <div class="mobile-drawer-links">
+        <a href="index.html" class="mobile-nav-link active">হোম</a>
+        <a href="pages/crop.html" class="mobile-nav-link">ফসল পরিকল্পনা</a>
+        <a href="pages/fish.html" class="mobile-nav-link">মৎস্যচাষ</a>
+        <a href="pages/livestock.html" class="mobile-nav-link">প্রাণিসম্পদ</a>
+        <a href="pages/disease.html" class="mobile-nav-link">রোগ নির্ণয়</a>
+        <a href="pages/community.html" class="mobile-nav-link">কমিউনিটি</a>
+        <a href="pages/profile.html" class="mobile-nav-link">প্রোফাইল</a>
+        <a href="pages/more.html" class="mobile-nav-link">আরও অপশন</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="mainContent" class="main-content" role="main">
+
+    <!-- Hero: full-width image, text below -->
+    <section class="hero-fullwidth" aria-label="হিরো ব্যানার">
+      <div class="hero-image-wrap">
+        <img src="assets/images/hero.png" alt="কৃষক জমিতে কাজ করছেন - ফলিকা কৃষি সঙ্গী">
+      </div>
+      <div class="hero-content-below">
+        <div class="container">
+          <span class="badge badge-expert" style="margin-bottom: 12px; background: rgba(255,255,255,0.2); color: #FFF8E1;" data-i18n="hero_badge">আধুনিক কৃষকের ডিজিটাল প্ল্যাটফর্ম</span>
+          <h1 class="text-h1" style="margin-bottom: 12px;" data-i18n="hero_title">ফলিকা ডিজিটাল কৃষি সেবা</h1>
+          <p class="text-body-lg" style="margin-bottom: 20px;" data-i18n="hero_desc">ফসলের রোগ নির্ণয়, আধুনিক চাষাবাদ পদ্ধতি, স্তরভিত্তিক মৎস্যচাষ, প্রাণিসম্পদ স্বাস্থ্য এবং আবহাওয়া ভিত্তিক সেচ পরামর্শ।</p>
+          <div class="flex flex-wrap gap-12">
+            <a href="pages/crop.html" class="btn btn-accent" data-i18n="hero_btn_crop">নতুন ফসল পরিকল্পনা করুন</a>
+            <a href="pages/disease.html" class="btn btn-secondary" style="background: rgba(255,255,255,0.15); color: #FFFFFF !important; border-color: #FFFFFF;" data-i18n="hero_btn_disease">ছবি তুলে রোগ নির্ণয়</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <section class="weather-widget" aria-label="আবহাওয়া পূর্বাভাস">
+        <div class="weather-header">
+          <div class="flex items-center gap-8">
+            <svg width="28" height="28" class="text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/>
+            </svg>
+            <h2 class="text-h3" style="color: var(--color-primary); margin: 0;" data-i18n="weather_title">আবহাওয়ার লাইভ পূর্বাভাস</h2>
+          </div>
+          <div id="homeLocationMount" class="folika-location-mount weather-controls"></div>
+        </div>
+
+        <div class="weather-info-grid">
+          <div class="weather-temp-display">
+            <div id="weatherTempVal" class="weather-temp-val">২৯° সে.</div>
+            <div>
+              <div id="weatherDescVal" class="text-body font-semibold">আংশিক মেঘলা</div>
+              <div class="text-caption"><span data-i18n="weather_wind">বাতাসের গতি</span>: <span id="weatherWindVal">১২ কিমি/ঘণ্টা</span></div>
+            </div>
+          </div>
+
+          <div class="card" style="background: var(--color-bg-secondary); padding: 12px; margin: 0;">
+            <div class="text-caption font-semibold" data-i18n="weather_rain">বৃষ্টির সম্ভাবনা</div>
+            <div id="weatherRainVal" class="text-h3 text-crop font-bold">২০%</div>
+          </div>
+
+          <div class="card" style="background: var(--color-primary-tint); border: 1px solid var(--color-primary); padding: 12px; margin: 0;">
+            <p id="weatherAdviceText" class="text-body-sm" style="margin: 0;">
+              <strong data-i18n="weather_advice">পরামর্শ</strong>: <span data-i18n="weather_advice_default">আগামী সপ্তাহে বৃষ্টির সম্ভাবনা কম। জমিতে সেচ ও সার প্রয়োগের উপযুক্ত সময়।</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="প্রধান সেবাসমূহ">
+        <div class="section-header section-header-stack">
+          <h2 class="section-title" data-i18n="dashboard_modules">প্রধান ড্যাশবোর্ড মডিউল</h2>
+          <p class="text-caption section-subtitle" data-i18n="dashboard_subtitle">আপনার প্রয়োজন অনুযায়ী মডিউলে প্রবেশ করুন</p>
+        </div>
+
+        <div class="grid grid-cols-1 grid-cols-sm-2 grid-cols-lg-3 gap-16 dashboard-module-grid">
+          <div class="card card-domain-crop dashboard-module-card">
+            <div class="card-header">
+              <span class="badge badge-crop" data-i18n="mod_crop_badge">ফসল মডিউল</span>
+            </div>
+            <div class="dashboard-module-body">
+              <h3 class="card-title" data-i18n="mod_crop_title">ফসল চাষাবাদ</h3>
+              <p class="text-body-sm text-secondary dashboard-module-desc" data-i18n="mod_crop_desc">জমির দৈর্ঘ্য ও প্রস্থ দিয়ে স্বয়ংক্রিয় ক্ষেত্রফল, ফসল পর্যায়ক্রম, সেচ ও সার হিসাব।</p>
+            </div>
+            <div class="card-footer dashboard-module-footer">
+              <a href="pages/crop.html" class="btn btn-sm btn-domain-crop" data-i18n="mod_crop_btn">ফসল প্ল্যানে যান</a>
+            </div>
+          </div>
+
+          <div class="card card-domain-fish dashboard-module-card">
+            <div class="card-header"><span class="badge badge-fish" data-i18n="mod_fish_badge">মৎস্য মডিউল</span></div>
+            <div class="dashboard-module-body">
+              <h3 class="card-title" data-i18n="mod_fish_title">মৎস্যচাষ</h3>
+              <p class="text-body-sm text-secondary dashboard-module-desc" data-i18n="mod_fish_desc">পুকুরের মাপ দিয়ে স্তরভিত্তিক মাছ ও খাদ্য তালিকা তৈরি করুন।</p>
+            </div>
+            <div class="card-footer dashboard-module-footer">
+              <a href="pages/fish.html" class="btn btn-sm btn-domain-fish" data-i18n="mod_fish_btn">মৎস্য প্ল্যানে যান</a>
+            </div>
+          </div>
+
+          <div class="card card-domain-livestock dashboard-module-card">
+            <div class="card-header"><span class="badge badge-livestock" data-i18n="mod_livestock_badge">প্রাণিসম্পদ</span></div>
+            <div class="dashboard-module-body">
+              <h3 class="card-title" data-i18n="mod_livestock_title">গবাদিপশু</h3>
+              <p class="text-body-sm text-secondary dashboard-module-desc" data-i18n="mod_livestock_desc">খাদ্য তালিকা, টিকাদান ক্যালেন্ডার ও স্বাস্থ্য পর্যবেক্ষণ।</p>
+            </div>
+            <div class="card-footer dashboard-module-footer">
+              <a href="pages/livestock.html" class="btn btn-sm btn-domain-livestock" data-i18n="mod_livestock_btn">প্রাণিসম্পদ প্ল্যানে যান</a>
+            </div>
+          </div>
+
+          <div class="card card-domain-disease dashboard-module-card">
+            <div class="card-header"><span class="badge badge-disease" data-i18n="mod_disease_badge">এআই প্রযুক্তি</span></div>
+            <div class="dashboard-module-body">
+              <h3 class="card-title" data-i18n="mod_disease_title">রোগ নির্ণয়</h3>
+              <p class="text-body-sm text-secondary dashboard-module-desc" data-i18n="mod_disease_desc">ছবি তুলে এআই দিয়ে রোগ শনাক্ত ও চিকিৎসা পরামর্শ পান।</p>
+            </div>
+            <div class="card-footer dashboard-module-footer">
+              <a href="pages/disease.html" class="btn btn-sm btn-domain-disease" data-i18n="mod_disease_btn">ছবি আপলোড করুন</a>
+            </div>
+          </div>
+
+          <div class="card card-domain-community dashboard-module-card">
+            <div class="card-header"><span class="badge badge-community" data-i18n="mod_community_badge">কমিউনিটি</span></div>
+            <div class="dashboard-module-body">
+              <h3 class="card-title" data-i18n="mod_community_title">কমিউনিটি ও ডিলার</h3>
+              <p class="text-body-sm text-secondary dashboard-module-desc" data-i18n="mod_community_desc">কৃষি অফিস হটলাইন, প্রশিক্ষণ বিজ্ঞপ্তি এবং ডিলার ডিরেক্টরি।</p>
+            </div>
+            <div class="card-footer dashboard-module-footer">
+              <a href="pages/community.html" class="btn btn-sm btn-primary" data-i18n="mod_community_btn">কমিউনিটি দেখুন</a>
+            </div>
+          </div>
+
+          <div class="card card-domain-govt dashboard-module-card">
+            <div class="card-header"><span class="badge badge-govt" data-i18n="mod_govt_badge">সরকারি সেবা</span></div>
+            <div class="dashboard-module-body">
+              <h3 class="card-title" data-i18n="mod_govt_title">সরকারি প্রণোদনা</h3>
+              <p class="text-body-sm text-secondary dashboard-module-desc" data-i18n="mod_govt_desc">কৃষি ভর্তুকি, ঋণ সুবিধা ও জরুরি হটলাইন নম্বর।</p>
+            </div>
+            <div class="card-footer dashboard-module-footer">
+              <a href="pages/govt.html" class="btn btn-sm btn-primary" data-i18n="mod_govt_btn">সরকারি সেবা দেখুন</a>
+            </div>
+          </div>
+
+          <div class="card card-domain-accent dashboard-module-card">
+            <div class="card-header"><span class="badge badge-expert" data-i18n="mod_finance_badge">আর্থিক হিসাব</span></div>
+            <div class="dashboard-module-body">
+              <h3 class="card-title" data-i18n="mod_finance_title">আমার আয়-ব্যয়</h3>
+              <p class="text-body-sm text-secondary dashboard-module-desc" data-i18n="mod_finance_desc">সকল প্ল্যানের সম্মিলিত খরচ ও সম্ভাব্য লাভ দেখুন।</p>
+            </div>
+            <div class="card-footer dashboard-module-footer">
+              <a href="pages/profile.html" class="btn btn-sm btn-accent" data-i18n="mod_finance_btn">প্রোফাইলে যান</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="মোবাইল দ্রুত নেভিগেশন">
+    <a href="index.html" class="tab-link active" aria-current="page">
+      <svg fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      <span>হোম</span>
+    </a>
+    <a href="pages/crop.html" class="tab-link">
+      <svg fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      <span>ফসল</span>
+    </a>
+    <a href="pages/fish.html" class="tab-link">
+      <svg fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/></svg>
+      <span>মৎস্য</span>
+    </a>
+    <a href="pages/livestock.html" class="tab-link">
+      <svg fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+      <span>প্রাণিসম্পদ</span>
+    </a>
+    <a href="pages/community.html" class="tab-link">
+      <svg fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      <span>কমিউনিটি</span>
+    </a>
+  </nav>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="flex items-center gap-8" style="margin-bottom: 12px;">
+            <img src="assets/images/folika-logo.jpg" alt="ফলিকা লোগো" style="height: 48px;">
+            <h4 style="color: #FFFFFF; margin-bottom: 0;">ফলিকা</h4>
+          </div>
+          <p class="text-body-sm" style="color: #C8E6C9;">বাংলাদেশের প্রান্তিক কৃষক ভাইদের জন্য তৈরি একটি নির্ভরযোগ্য ডিজিটাল কৃষি পরামর্শক।</p>
+        </div>
+        <div class="footer-col">
+          <h4>প্রধান মেনু</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">হোম</a></li>
+            <li><a href="pages/crop.html">ফসল পরিকল্পনা</a></li>
+            <li><a href="pages/fish.html">মৎস্যচাষ</a></li>
+            <li><a href="pages/livestock.html">প্রাণিসম্পদ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>সেবা ও তথ্য</h4>
+          <ul class="footer-links">
+            <li><a href="pages/disease.html">রোগ নির্ণয়</a></li>
+            <li><a href="pages/community.html">কমিউনিটি</a></li>
+            <li><a href="pages/govt.html">সরকারি সেবা</a></li>
+            <li><a href="pages/profile.html">প্রোফাইল</a></li>
+            <li><a href="pages/more.html">আরও অপশন</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>জরুরি হটলাইন</h4>
+          <p class="text-body-sm">কৃষি তথ্য: <strong style="color: var(--color-accent);">১৬১২৩</strong></p>
+          <p class="text-body-sm">প্রাণিসম্পদ: <strong style="color: var(--color-accent);">১০৬৫৫</strong></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© ২০২৬ ফলিকা • <span data-i18n="footer_rights">সর্বস্বত্ব সংরক্ষিত</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/geo-bd.js"></script>
+  <script src="js/location.js?v=20260905c"></script>
+  <script src="js/page-copy.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/main.js?v=20260829"></script>
+</body>
+</html>

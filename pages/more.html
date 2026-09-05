@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আরও অপশন — ফলিকা</title>
+  <meta name="description" content="ফলিকা — ভাষা, থিম, সময় অঞ্চল, মুদ্রা ও অ্যাপ পছন্দ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css?v=20260829">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+  <a href="#moreMain" class="skip-link" data-i18n="skip_content">মূল বিষয়বস্তুতে যান</a>
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <button id="mobileMenuToggle" class="menu-toggle-btn" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobileDrawerBackdrop">
+        <span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span><span class="menu-bar" aria-hidden="true"></span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ফলিকা হোম পেজ">
+        <img src="../assets/images/folika-logo.jpg" alt="" class="brand-logo">
+        <div class="brand-text-wrap">
+          <span class="brand-title" data-i18n="brand_title">ফলিকা</span>
+          <span class="brand-tagline" data-i18n="brand_tagline">কৃষকের ডিজিটাল সঙ্গী</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="profile.html" class="header-user-widget" aria-label="ইউজার প্রোফাইল">
+          <div class="header-user-info"><span class="header-user-name">Rohim mia</span>
+</div>
+          <div class="header-user-avatar" aria-hidden="true">ফ</div>
+        </a>
+      </div>
+    </div>
+  </header>
+  <nav class="sub-nav-bar" aria-label="প্রধান মেনু"><div class="container"><div class="nav-pills-wrap"></div></div></nav>
+  <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true">
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="মোবাইল নেভিগেশন">
+      <div class="mobile-drawer-header">
+        <div class="flex items-center gap-8"><img src="../assets/images/folika-logo.jpg" alt="" style="height:48px;"><span class="font-bold text-white" data-i18n="menu_title">ফলিকা মেনু</span></div>
+        <button id="mobileDrawerClose" class="btn-icon-only text-white" aria-label="মেনু বন্ধ করুন">বন্ধ</button>
+      </div>
+      <div class="mobile-drawer-links"></div>
+    </div>
+  </div>
+
+  <main id="moreMain" class="main-content" role="main">
+    <div class="container" style="max-width: 840px;">
+      <div class="section-header" style="margin-bottom: 24px;">
+        <h1 class="text-h1">আরও অপশন</h1>
+        <p class="text-body text-secondary">অ্যাপ পছন্দ, ভাষা, থিম ও সিস্টেম সেটিংস</p>
+      </div>
+
+      <section class="card profile-settings-section" aria-label="পছন্দ">
+        <h2 class="card-title text-primary">পছন্দ (Preferences)</h2>
+        <div class="form-group">
+          <label class="form-label" for="appLanguageSelect">ভাষা</label>
+          <select id="appLanguageSelect" class="form-control">
+            <option value="bn" selected>বাংলা</option>
+            <option value="en">ইংরেজি</option>
+          </select>
+        </div>
+        <div class="profile-setting-row">
+          <div><div class="font-bold text-body">থিম (লাইট / ডার্ক)</div><div class="text-caption">দিনে হালকা, রাতে গাঢ় থিম</div></div>
+          <label class="toggle-switch" aria-label="থিম"><input type="checkbox" id="themeToggle"><span class="toggle-track"><span class="toggle-thumb"></span></span></label>
+        </div>
+        <div class="form-group" style="margin-top: 12px;">
+          <label class="form-label" for="prefTimezone">সময় অঞ্চল (Time Zone)</label>
+          <select id="prefTimezone" class="form-control">
+            <option value="Asia/Dhaka" selected>বাংলাদেশ (Asia/Dhaka, GMT+6)</option>
+            <option value="Asia/Kolkata">ভারত (Asia/Kolkata, GMT+5:30)</option>
+            <option value="UTC">UTC</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="prefCurrency">মুদ্রা (Currency)</label>
+          <select id="prefCurrency" class="form-control">
+            <option value="BDT" selected>বাংলাদেশি টাকা (৳)</option>
+            <option value="USD">US Dollar ($)</option>
+            <option value="INR">Indian Rupee (₹)</option>
+          </select>
+        </div>
+        <div class="profile-setting-row">
+          <div><div class="font-bold text-body">উচ্চ কনট্রাস্ট</div><div class="text-caption">পাঠযোগ্যতা বাড়াতে</div></div>
+          <label class="toggle-switch"><input type="checkbox" id="contrastToggle"><span class="toggle-track"><span class="toggle-thumb"></span></span></label>
+        </div>
+        <div class="profile-setting-row">
+          <div><div class="font-bold text-body">ফন্টের আকার</div></div>
+          <select id="fontScaleSelect" class="form-control" style="max-width:160px;" aria-label="ফন্টের আকার">
+            <option value="default">সাধারণ</option>
+            <option value="large">বড়</option>
+            <option value="xlarge">অতি বড়</option>
+          </select>
+        </div>
+        <button type="button" id="btnOpenA11yPanel" class="btn btn-secondary btn-block" style="margin-top:12px;">এ্যাক্সেসিবিলিটি মেনু খুলুন</button>
+      </section>
+
+      <section class="card profile-settings-section" aria-label="অফলাইন ও ক্যাশ">
+        <h2 class="card-title text-secondary">অফলাইন ও ক্যাশ</h2>
+        <div class="profile-setting-row">
+          <div><div class="font-bold text-body">অফলাইন সিঙ্ক</div><div class="text-caption" id="moreSyncStatus">শেষ সিঙ্ক: —</div></div>
+          <button type="button" id="btnSettingsSync" class="btn btn-sm btn-secondary">এখন সিঙ্ক করুন</button>
+        </div>
+        <p id="settingsSyncMsg" class="text-caption text-secondary"></p>
+        <button type="button" id="btnClearCache" class="btn btn-danger btn-sm" style="margin-top:12px;">ক্যাশ ও অফলাইন ডাটা মুছুন</button>
+      </section>
+
+      <section class="card profile-settings-section">
+        <a href="profile-settings.html" class="btn btn-secondary btn-block">প্রোফাইল সেটিংস</a>
+        <a href="profile.html" class="btn btn-tertiary btn-block" style="margin-top:8px;">প্রোফাইল ড্যাশবোর্ড</a>
+      </section>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="মোবাইল দ্রুত নেভিগেশন"></nav>
+  <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-bottom"><p>© ২০২৬ ফলিকা</p></div></div></footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/page-copy.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/accessibility-widget.js?v=20260830g"></script>
+  <script src="../js/main.js?v=20260830d"></script>
+  <script src="../js/more-page.js"></script>
+</body>
+</html>

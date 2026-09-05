@@ -1,0 +1,50 @@
+/* Community page — search results & show-more scroll panels */
+
+.community-search-placeholder {
+  padding: 14px;
+  margin: 0;
+  background: var(--color-bg-secondary);
+  border: 1px dashed var(--color-border);
+  text-align: center;
+}
+
+.community-results-mount {
+  min-height: 0;
+}
+
+.community-results-more {
+  display: none;
+}
+
+.community-results-more.is-open {
+  display: block;
+}
+
+.community-results-scroll {
+  max-height: min(52vh, 380px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  -webkit-overflow-scrolling: touch;
+}
+
+.community-results-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.community-results-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+}
+
+.community-show-more-btn {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.community-show-more-btn.is-expanded {
+  margin-top: 8px;
+}

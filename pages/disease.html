@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>রোগ নির্ণয় — ফলিকা</title>
+  <meta name="description" content="ফলিকা রোগ নির্ণয় — ছবি তুলে এআই দিয়ে ফসলের রোগ শনাক্ত ও চিকিৎসা পরামর্শ">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css?v=20260829">
+
+</head>
+<body>
+
+  <a href="#diseaseMain" class="skip-link" data-i18n="skip_content">মূল বিষয়বস্তুতে যান</a>
+
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <button id="mobileMenuToggle" class="menu-toggle-btn" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobileDrawerBackdrop">
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ফলিকা হোম পেজ">
+        <img src="../assets/images/folika-logo.jpg" alt="" class="brand-logo">
+        <div class="brand-text-wrap">
+          <span class="brand-title" data-i18n="brand_title">ফলিকা</span>
+          <span class="brand-tagline" data-i18n="brand_tagline">কৃষকের ডিজিটাল সঙ্গী</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="profile.html" class="header-user-widget" aria-label="ইউজার প্রোফাইল">
+          <div class="header-user-info">
+            <span class="header-user-name">Rohim mia</span>
+</div>
+          <div class="header-user-avatar" aria-hidden="true">ম</div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sub-nav-bar" aria-label="প্রধান মেনু">
+    <div class="container">
+      <div class="nav-pills-wrap"></div>
+    </div>
+  </nav>
+
+  <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true">
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="মোবাইল নেভিগেশন">
+      <div class="mobile-drawer-header">
+        <div class="flex items-center gap-8">
+          <img src="../assets/images/folika-logo.jpg" alt="ফলিকা লোগো" style="height: 48px;">
+          <span class="font-bold text-white" data-i18n="menu_title">ফলিকা মেনু</span>
+        </div>
+        <button id="mobileDrawerClose" class="btn-icon-only text-white" aria-label="মেনু বন্ধ করুন">বন্ধ</button>
+      </div>
+      <div class="mobile-drawer-links"></div>
+    </div>
+  </div>
+
+  <main id="diseaseMain" class="main-content" role="main">
+    <div class="container">
+      <section class="section">
+        <div class="flex items-center justify-between flex-wrap gap-12">
+          <div>
+            <span class="badge badge-disease" style="margin-bottom: 8px;">এআই রোগ নির্ণয়</span>
+            <h1 class="text-h1">ছবি তুলে ফসলের রোগ শনাক্ত করুন</h1>
+            <p class="text-body-lg text-secondary">মোবাইল ক্যামেরা বা গ্যালারি থেকে পাতার ছবি আপলোড করুন</p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="card card-domain-disease">
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label class="form-label" for="diseaseCategory">কোন ধরনের রোগ নির্ণয়?</label>
+            <select id="diseaseCategory" class="form-control" aria-label="রোগ নির্ণয়ের ধরন">
+              <option value="crop" selected>ফসল (ধান, সবজি, ফল ইত্যাদি)</option>
+              <option value="fish">মৎস্য (মাছের রোগ)</option>
+              <option value="livestock">প্রাণিসম্পদ (গরু, ছাগল, হাঁস ইত্যাদি)</option>
+            </select>
+          </div>
+          <div class="dropzone" id="diseaseDropzone" tabindex="0" role="button" aria-label="ছবি আপলোড করতে এখানে ট্যাপ করুন বা ফাইল বাছাই করুন">
+            <input type="file" id="diseaseFileInput" accept="image/*" style="display: none;">
+            <svg class="dropzone-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <div>
+              <h2 class="text-h3" style="color: var(--color-disease); margin-bottom: 4px;">এখানে ছবি টেনে আনুন বা ক্যামেরা খুলুন</h2>
+              <p class="text-body-sm text-tertiary">স্পষ্ট, আলোযুক্ত ছবি দিন — JPG/PNG (সর্বোচ্চ ১০ MB)</p>
+            </div>
+            <button type="button" class="btn btn-domain-disease btn-sm">গ্যালারি / ক্যামেরা খুলুন</button>
+          </div>
+          <div id="dropzonePreview" style="display: none;"></div>
+          <div class="flex justify-center" style="margin-top: 20px;">
+            <button id="analyzeButton" class="btn btn-primary btn-lg" style="min-width: 260px;" disabled>এআই দিয়ে রোগ বিশ্লেষণ করুন</button>
+          </div>
+          <div id="diagnosisLoading" style="display: none; text-align: center; padding: 24px;">
+            <div class="spinner"></div>
+            <p class="text-body font-semibold text-primary" style="margin-top: 12px;">ছবি যাচাই হচ্ছে ও রোগ শনাক্ত করা হচ্ছে...</p>
+          </div>
+        </div>
+      </section>
+      <div id="diseaseDemoBanner" class="alert alert-warning" style="display:none;margin-bottom:16px;" role="status">
+        <div class="alert-content">
+          <strong>ডেমো ফলাফল:</strong> লগইন ছাড়াই নমুনা রোগের তথ্য দেখানো হয়েছে।
+        </div>
+      </div>
+      <section id="diagnosisResult" class="section" style="display: none;" aria-label="রোগ শনাক্তকরণ ফলাফল">
+        <div class="section-header">
+          <h2 class="section-title text-disease">রোগ শনাক্তকরণ ফলাফল</h2>
+          <span id="diagnosisSeverity" class="badge badge-severe">তীব্রতা: —</span>
+        </div>
+        <p id="diagnosisCropName" class="text-body-sm text-secondary" style="margin-bottom: 12px;"></p>
+        <div class="grid grid-cols-1 grid-cols-md-2 gap-16">
+          <div class="card card-domain-disease">
+            <div class="flex items-center justify-between" style="margin-bottom: 12px;">
+              <h3 class="card-title diagnosis-name">ধান পাতার ব্লাস্ট (Leaf Blast)</h3>
+              <span class="badge badge-expert diagnosis-confidence">নির্ভুলতা: ৮৭.৫%</span>
+            </div>
+            <p id="diagnosisDescription" class="text-body text-secondary" style="margin-bottom: 12px;">
+              <strong>বর্ণনা:</strong> —
+            </p>
+            <div class="alert alert-warning" style="margin-bottom: 0;">
+              <div class="alert-content">
+                <strong>সতর্কতা:</strong> সংক্রমিত পাতা সংগ্রহ করে পুড়িয়ে ফেলুন।
+              </div>
+            </div>
+          </div>
+          <div class="card" style="background-color: var(--color-success-tint); border: 2px solid var(--color-success);">
+            <h3 class="card-title text-success" style="margin-bottom: 8px;">চিকিৎসা পরামর্শ ও পদক্ষেপ</h3>
+            <ul id="diagnosisTreatmentList" style="padding-left: 20px; color: var(--color-text-primary); line-height: 1.8;">
+              <li>ফলাফল এখানে দেখাবে</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card" style="margin-top: 16px; background-color: var(--color-govt-tint); border: 2px solid var(--color-govt);">
+          <div class="flex items-center justify-between flex-wrap gap-12">
+            <div>
+              <h3 class="card-title text-info">কাছের কৃষি অফিস থেকে পরামর্শ নিন</h3>
+              <p class="text-body-sm text-secondary">স্থানীয় উপসহকারী কৃষি কর্মকর্তা — ফোন: ১৬১২৩</p>
+              <div id="diseaseNearbyMount" class="text-body-sm text-secondary" style="margin-top: 8px;"></div>
+            </div>
+            <div class="flex gap-8">
+              <a href="tel:16123" class="btn btn-sm btn-domain-govt">কল করুন — ১৬১২৩</a>
+              <a href="community.html" class="btn btn-sm btn-secondary">কমিউনিটিতে ডিলার খুঁজুন</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="মোবাইল দ্রুত নেভিগেশন"></nav>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© ২০২৬ ফলিকা • <span data-i18n="footer_rights">সর্বস্বত্ব সংরক্ষিত</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/geo-bd.js"></script>
+  <script src="../js/location.js"></script>
+  <script src="../js/page-copy.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/main.js?v=20260905b"></script>
+</body>
+</html>

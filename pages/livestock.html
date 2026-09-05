@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>প্রাণিসম্পদ পরিকল্পনা — ফলিকা</title>
+  <meta name="description" content="ফলিকা প্রাণিসম্পদ পরিকল্পনা — গবাদি পশু, খাদ্য তালিকা, টিকা ও স্বাস্থ্য পর্যবেক্ষণ">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css?v=20260829">
+
+</head>
+<body>
+
+  <a href="#livestockMain" class="skip-link" data-i18n="skip_content">মূল বিষয়বস্তুতে যান</a>
+
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <button id="mobileMenuToggle" class="menu-toggle-btn" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobileDrawerBackdrop">
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ফলিকা হোম পেজ">
+        <img src="../assets/images/folika-logo.jpg" alt="" class="brand-logo">
+        <div class="brand-text-wrap">
+          <span class="brand-title" data-i18n="brand_title">ফলিকা</span>
+          <span class="brand-tagline" data-i18n="brand_tagline">কৃষকের ডিজিটাল সঙ্গী</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="profile.html" class="header-user-widget" aria-label="ইউজার প্রোফাইল">
+          <div class="header-user-info">
+            <span class="header-user-name">Rohim mia</span>
+</div>
+          <div class="header-user-avatar" aria-hidden="true">ম</div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sub-nav-bar" aria-label="প্রধান মেনু">
+    <div class="container">
+      <div class="nav-pills-wrap"></div>
+    </div>
+  </nav>
+
+  <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true">
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="মোবাইল নেভিগেশন">
+      <div class="mobile-drawer-header">
+        <div class="flex items-center gap-8">
+          <img src="../assets/images/folika-logo.jpg" alt="ফলিকা লোগো" style="height: 48px;">
+          <span class="font-bold text-white" data-i18n="menu_title">ফলিকা মেনু</span>
+        </div>
+        <button id="mobileDrawerClose" class="btn-icon-only text-white" aria-label="মেনু বন্ধ করুন">বন্ধ</button>
+      </div>
+      <div class="mobile-drawer-links"></div>
+    </div>
+  </div>
+
+  <main id="livestockMain" class="main-content" role="main">
+    <div class="container">
+      <div id="livestockPlanRoot"></div>
+    </div>
+
+  <div id="livestockReminderModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title">প্রাণিসম্পদ পরিকল্পনা রিমাইন্ডার</h3>
+        <button class="modal-close-btn" data-modal-close aria-label="বন্ধ করুন">বন্ধ</button>
+      </div>
+      <div class="modal-body">
+        <form data-validate>
+          <div class="form-group">
+            <label class="form-label" for="lsRemindTask">কাজের ধরন</label>
+            <select id="lsRemindTask" class="form-control">
+              <option value="anthrax">এনথ্রাক্স (গুবড়ু) টিকাদান সময়</option>
+              <option value="deworm">কৃমিনাশক প্রয়োগের তারিখ</option>
+              <option value="calcium">ক্যালসিয়াম ও ভিটামিন খাওয়ানো</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lsRemindDate">তারিখ</label>
+            <input type="date" id="lsRemindDate" class="form-control" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-modal-close>বাতিল</button>
+            <button type="submit" class="btn btn-primary">সংরক্ষণ করুন</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="মোবাইল দ্রুত নেভিগেশন"></nav>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© ২০২৬ ফলিকা • <span data-i18n="footer_rights">সর্বস্বত্ব সংরক্ষিত</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/geo-bd.js"></script>
+  <script src="../js/location.js"></script>
+  <script src="../js/livestock-data.js"></script>
+  <script src="../js/suggestion-list.js"></script>
+  <script src="../js/plan-sync.js"></script>
+  <script src="../js/livestock-plan.js"></script>
+  <script src="../js/page-copy.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/main.js?v=20260829"></script>
+</body>
+</html>
